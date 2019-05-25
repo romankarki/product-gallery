@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation | Notika - Notika Admin Template</title>
+    <meta name="description" content="Thanks for purchasing Huge. If you need any support, please contact with us.">
+    <meta name="author" content="lucidtemplate">
+    <meta name="copyright" content="lucidtemplate">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tree-viewer.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<h1>welcome to gallery</h1>
+	
+				<div>
+				<table class="table table-sm table-nowrap card-table">
+						<tbody class="list">
+							<tr th:each="gallery: ${gallery}">
+
+									<!-- <form class="mb-4" action="#" th:action="@{/course/search}" method="get"> -->
+  <!-- <td>
+                   
+                          <label class="mb-8">
+                           <h3 font="bold"><b><b>Search by course name instead</b></b></h3> 
+                            
+                            </label>
+                            &nbsp
+                            
+								 <input type="text" name="courseName" th:value="${courses.getCourseName()}" class="form-control" >
+								 </td>
+								 <td>
+								 <br></br>
+								 <button type="submit" class="btn btn-md btn-warning btn-block"><b>search</b></button>
+									</form> -->
+									</td>
+									</tr>
+									
+									</table>
+									</div>
+				<!-- [[${courselist}]] -->
+			<!-- 	<div class="card"> -->
+				<div >
+
+					<table class="table table-sm table-nowrap card-table" border="1" bordercolor="white">
+						<thead>
+							<tr >
+								<th>gallery id</th>
+								<th>product name</th>
+								<th>description</th>
+								<th>>photo</th>
+								
+								 <th>    action</th> 
+								
+							</tr>
+						</thead>
+						<tbody class="list">
+							<tr th:each="gallery: ${gallerylist}">
+								<td class="orders-order" th:text="${gallery.getGalleryId()}"></td>
+								<td class="orders-order" th:text="${gallery.getGalleryName()}"></td>
+								<td class="orders-order" th:text="${gallery.getDescription()}"></td>
+								<td class="orders-order"><!-- <img th:src="@{/images/${gallery.getPhoto()}}" width="350" height="200" /> -->
+								<img th:attr="src=@{'/images/' + ${gallery.getPhoto()}},title=${gallery.getPhoto()},alt=${gallery.getPhoto()}" width="150" height="50" /></td>
+								<!-- <td class="orders-order" th:text="${courses.getStartDate()}"></td> -->
+								 <td>
+									<form class="mb-4" action="#" th:action="@{/show}"
+										method="get">
+										<input type="hidden" name="id"
+											th:value="${gallery.getGalleryId()}">
+										<button type="submit" class="btn btn-primary">show</button>
+
+									</form>
+									</td>
+								
+								<!-- <form class="mb-4" action="#" th:action="@{/course/edit}"
+										method="get">
+										<input type="hidden" name="id"
+											th:value="${courses.getCourseId()}">
+										<button type="submit" class="btn btn-primary">edit</button>
+										</form> -->
+										
+										<!-- <form class="mb-4" action="#" th:action="@{/course/show}" method="get">
+
+                            
+                            <label>
+                               search
+                            </label>
+
+                           
+                          <input type="text" class="form-control" /> 
+
+								 <input type="hidden" name="id" th:value="${courses.getCourseId()}">
+									<button type="submit" class="btn btn-primary">search</button> -->
+								</td>
+							</tr>
+							<!-- 		<tr>
+							<form class="mb-4" action="#" th:action="@{/course/show}" method="get">
+
+                            Label
+                            <label>
+                               search
+                            </label>
+
+                            Input
+                          <input type="text" class="form-control" /> 
+
+								 <input type="hidden" name="id" th:value="${courses.getCourseId()}">
+									<button type="submit" class="btn btn-primary">search</button>
+							</tr>
+ -->
+						</tbody>
+					</table>
+
+
+
+				</div>
+			</div>
+		</div>
+		<!-- / .row -->
+
+
+	</div>
+	  <div id="source" class="content fade">
+                    <h1> Sources &amp; Credits </h1>
+                    
+                    <h3>Fonts</h3>
+                    <ul>
+                        <li><a href="https://fonts.googleapis.com/">Google Fonts</a></li>
+                    </ul>
+                    
+                    <h3>Icons</h3>
+                    <ul>
+                        <li><a href="http://fontawesome.io/">Font Awesome</a></li>
+						<li><a href="https://icomoon.io/app/">Notika Custom Icons</a></li>
+                    </ul>
+                    <h3>Scripts</h3>
+                    <ul>
+                        <li><a href="https://omnipotent.net/jquery.sparkline/#s-about">Sparklines</a></li>
+                        <li><a href="http://manos.malihu.gr/jquery-custom-content-scroller/">Scrollbar</a></li>
+                        <li><a href="https://www.virtuosoft.eu/code/bootstrap-touchspin/">TouchSpin</a></li>
+                        <li><a href="http://issues.wenzhixin.net.cn/bootstrap-table/">Data Table</a></li>
+                        <li><a href="https://www.vincentbroute.fr/mapael/">Mapael</a></li>
+                        <li><a href="http://jvectormap.com/">jvectormap</a></li>
+                        <li><a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">RangeSlider</a></li>
+                        <li><a href="https://fengyuanchen.github.io/cropper/">Cropper</a></li>
+                        <li><a href="http://simplemaps.com/us">Data Map</a></li>
+                        <li><a href="http://codemirror.net/index.html">CodeMirror</a></li>
+                        <li><a href="https://harvesthq.github.io/chosen/">Chosen</a></li>
+                        <li><a href="https://www.malot.fr/bootstrap-datetimepicker/">datetimepicker</a></li>
+                        <li><a href="http://www.dropzonejs.com//">dropzonejs</a></li>
+                        <li><a href="http://summernote.org/">summernote</a></li>
+                    </ul>
+                </div>
+                <div id="support" class="content fade">
+                    <h1> Supports </h1>
+                    <p>Thank you for reading the documentaion. If you still have any question or any problem, please contact with us. We will give you best support. Thanks.</p>
+                    
+                </div>
+                <div id="nine" class="content fade">
+                    <h1> Sliders Structure </h1>
+                    <div>The base structure was organized by row, col-** class </div>
+                    <pre>
+    <xmp>
+    <!-- code will be here -->
+    </xmp>
+</pre>
+                    <!-- code pre tag end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/jstree.min.js"></script>
+    <script src="js/jstree.active.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>upload a product</title>
+</head>
+<body>
+
+	
+				<!-- Form -->
+				<form class="mb-4" action="#" th:action="@{/upload}"
+					th:object="${gallery}" method="post">
+
+						<div>
+								<label> product Name </label>
+
+								<!-- Input -->
+								<input type="text" th:field="*{galleryName}"
+									 />
+
+							</div>
+
+						<div>
+
+								<label>description</label>
+
+								<!-- Input -->
+								<input type="text" th:field="*{description}"
+									/>
+
+							</div>	
+<div >
+
+								<label>photo </label>
+
+								<!-- Input -->
+								<input type="file" th:field="*{photo}"/>
+
+							</div>
+
+			<!-- Submit -->
+			<button type="submit" >upload</button>
+			</form>
+</body>
+</html>

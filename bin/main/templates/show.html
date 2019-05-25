@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table  th:each="gallery: ${gallery}"
+>
+						<thead>
+							<tbody class="list">
+							<tr>
+								<!-- <td><h2>photo</h2></td> -->
+								<td><img th:attr="src=@{'/images/' + ${gallery.getPhoto()}},title=${gallery.getPhoto()},alt=${gallery.getPhoto()}" /></td>
+</tr>
+							
+							<tr>
+								<td><h2>gallery id</h2></td>
+								<td  th:text="${gallery.getGalleryId()}"></td>
+								</tr>
+								<tr>
+								<td><h2>product name</h2></td>
+								<td  th:text="${gallery.getGalleryName()}"></td>
+								</tr>
+								<tr>
+								<td><h2>description</h2></td>
+								<td  th:text="${gallery.getDescription()}"></td>
+								</tr>
+								
+							<tr>
+							<td>
+							</td>
+							</tr> 
+						</thead>
+							
+								 <form class="mb-4" action="#" th:action="@{/buy}"
+				 method="get">
+										<!-- <input type="hidden" name="id"
+											th:value="${user.getUserId()}">
+										<input type="hidden" name="id"
+											th:value="${buyer.getBuyerId()}">  -->
+										<!-- <input type="hidden" name="id"
+											th:value="${buyer.getBuyerId()}">  -->
+										<button type="submit" class="btn btn-md btn-warning"><h1>buy now</h1></button>
+										</form> 
+									 
+								
+					
+					</tbody>
+				
+					</table>
+</body>
+</html>
